@@ -1,0 +1,93 @@
+﻿@model IEnumerable<CallClient2023Web.Models.BazaBrojeva>
+
+<div class="text-center">
+    <h1 class="display-4">Urađeni pozivi</h1>
+    
+</div>
+<a class="btn btn-success" asp-controller="Home" asp-action="ExportExcel">Export</a>
+    <table class="table">
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ImePrezime)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.BrojTelefona)
+            </th>
+
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.AdresaStanovanja)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.AsortimanProizvoda)
+            </th>
+
+            <th>
+            @Html.DisplayNameFor(model => model.Proizvod)
+             </th>
+             <th>
+
+            @Html.DisplayNameFor(model => model.BrojKomada)
+            </th>
+
+             <th>
+            @Html.DisplayNameFor(model => model.Clanstvo)
+            </th>
+
+
+
+
+
+
+        </tr>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ImePrezime)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BrojTelefona)
+                    </td>
+
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AdresaStanovanja)
+                    </td>  
+                    <td>
+                    @Html.DisplayFor(modelItem => item.AsortimanProizvoda)
+                    </td>  
+                    <td>
+                    @Html.DisplayFor(modelItem => item.Proizvod)
+                    </td>  
+                    <td>
+                    @Html.DisplayFor(modelItem => item.BrojKomada)
+                    </td>  
+                    <td>
+                    @Html.DisplayFor(modelItem => item.Clanstvo)
+
+                <td>
+                    <a value="Edit" class="btn btn-primary" asp-action="OdgovoriForm" asp-route-id="@item.BrojTelefona">Edit</a>
+
+                </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+    
+
+
+
+
+

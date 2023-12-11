@@ -1,0 +1,61 @@
+﻿@model IEnumerable<CallClient2023Web.Models.BazaBrojeva>
+
+
+
+
+<table class="table">
+
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.ImePrezime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdresaStanovanja)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AsortimanProizvoda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proizvod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BrojKomada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Clanstvo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImePrezime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdresaStanovanja)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AsortimanProizvoda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proizvod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BrojKomada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clanstvo)
+            </td>
+            <td>
+                    <a asp-action="OdgovoriForm" asp-route-id="@item.BrojTelefona">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BrojTelefona">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BrojTelefona">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

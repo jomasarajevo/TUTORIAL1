@@ -1,0 +1,81 @@
+﻿@model CallClient2023Web.Models.CallClientModel
+
+@{
+    Layout = null;
+}
+
+<style>
+     input[type=password] {
+        width: 25%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        box-sizing: border-box;
+    }
+
+    .dugme {
+        background-color: #04AA6D;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 10%;
+    }
+
+   .dugme:hover {
+            opacity: 0.8;
+            
+        }
+
+    .dugme2 {
+        background-color: red;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 10%;
+    }
+
+        .dugme2:hover {
+            opacity: 0.8;
+           
+        }
+</style>
+
+
+
+<div style="text-align:center">
+    <h1 style="font-family:Arial"class="display-4">OPERATER LOGIN</h1>
+
+</div>
+<hr />
+
+<div style="text-align:center" class="row ">
+    <div class="col-md-4">
+        <form asp-action="LoginForm">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="KodAnkete" style="font-family:Bahnschrift; font-size:20px" class="control-label"></label>
+                <input type="password" asp-for="KodAnkete" class="form-control" placeholder="Šestoznamenkasti kod" />
+                <span asp-validation-for="KodAnkete" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KodAnketara" style="font-family:Bahnschrift; font-size:20px" class="control-label"></label>
+                <input type="password" asp-for="KodAnketara" class="form-control" placeholder="Unesi šifru" />
+                <span asp-validation-for="KodAnketara" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" asp-action="CheckPassword" class="dugme btn-primary" />
+                <input type="reset" value="Reset" class=" dugme2 btn-danger" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

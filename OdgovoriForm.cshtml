@@ -1,0 +1,60 @@
+﻿@model CallClient2023Web.Models.BazaBrojeva
+
+@{
+    ViewData["Title"] = "OdgovoriForm";
+}
+
+<h1>Edit</h1>
+<hr />
+<br />
+<div class="row">
+    <div class="col-md-4">
+       
+        <form asp-action="OdgovoriForm">
+           
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ImePrezime" class="control-label"></label>
+                <input asp-for="ImePrezime" class="form-control" />
+                <span asp-validation-for="ImePrezime" class="text-danger"></span>
+            </div>
+            <input visible="hidden" asp-for="BrojTelefona" />
+            <div class="form-group">
+                <label asp-for="AdresaStanovanja" class="control-label"></label>
+                <input asp-for="AdresaStanovanja" class="form-control" />
+                <span asp-validation-for="AdresaStanovanja" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsortimanProizvoda" class="control-label"></label>
+                <input asp-for="AsortimanProizvoda" class="form-control" />
+                <span asp-validation-for="AsortimanProizvoda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Proizvod" class="control-label"></label>
+                <input asp-for="Proizvod" class="form-control" />
+                <span asp-validation-for="Proizvod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BrojKomada" class="control-label"></label>
+                <input asp-for="BrojKomada" class="form-control" />
+                <span asp-validation-for="BrojKomada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Clanstvo" class="control-label"></label>
+                <input asp-for="Clanstvo" class="form-control" />
+                <span asp-validation-for="Clanstvo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" asp-action="Odgovori" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
